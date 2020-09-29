@@ -489,6 +489,12 @@ RMW_INTERFACE_FN(
     void *, Event_callback, void *, void *))
 
 RMW_INTERFACE_FN(
+  rmw_set_client_callback,
+  rmw_ret_t, RMW_RET_ERROR,
+  4, ARG_TYPES(
+    void *, Event_callback, void *, void *))
+
+RMW_INTERFACE_FN(
   rmw_get_publisher_names_and_types_by_node,
   rmw_ret_t, RMW_RET_ERROR,
   6, ARG_TYPES(
