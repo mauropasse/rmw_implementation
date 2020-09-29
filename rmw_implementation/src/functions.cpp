@@ -477,7 +477,7 @@ RMW_INTERFACE_FN(
     rmw_events_t *, rmw_wait_set_t *))
 
 RMW_INTERFACE_FN(
-  rmw_set_subscription_hook,
+  rmw_set_subscription_callback,
   rmw_ret_t, RMW_RET_ERROR,
   4, ARG_TYPES(
     void *, Event_callback, void *, void *))
