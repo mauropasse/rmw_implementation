@@ -608,28 +608,28 @@ RMW_INTERFACE_FN(
     rmw_topic_endpoint_info_array_t *))
 
 RMW_INTERFACE_FN(
-  rmw_set_subscription_callback,
+  rmw_subscription_set_events_executor_callback,
   rmw_ret_t, RMW_RET_ERROR,
   4, ARG_TYPES(
-    const void *, Event_callback, const void *, void *))
+    const void *, ExecutorEventCallback, const void *, void *))
 
 RMW_INTERFACE_FN(
-  rmw_set_service_callback,
+  rmw_service_set_events_executor_callback,
   rmw_ret_t, RMW_RET_ERROR,
   4, ARG_TYPES(
-    const void *, Event_callback, const void *, void *))
+    const void *, ExecutorEventCallback, const void *, void *))
 
 RMW_INTERFACE_FN(
-  rmw_set_client_callback,
+  rmw_client_set_events_executor_callback,
   rmw_ret_t, RMW_RET_ERROR,
   4, ARG_TYPES(
-    const void *, Event_callback, const void *, void *))
+    const void *, ExecutorEventCallback, const void *, void *))
 
 RMW_INTERFACE_FN(
-  rmw_set_guard_condition_callback,
+  rmw_guard_condition_set_events_executor_callback,
   rmw_ret_t, RMW_RET_ERROR,
   5, ARG_TYPES(
-    const void *, Event_callback, const void *, void *, bool))
+    const void *, ExecutorEventCallback, const void *, void *, bool))
 
 #define GET_SYMBOL(x) symbol_ ## x = get_symbol(#x);
 
@@ -708,10 +708,10 @@ void prefetch_symbols(void)
   GET_SYMBOL(rmw_set_log_severity)
   GET_SYMBOL(rmw_get_publishers_info_by_topic)
   GET_SYMBOL(rmw_get_subscriptions_info_by_topic)
-  GET_SYMBOL(rmw_set_subscription_callback)
-  GET_SYMBOL(rmw_set_service_callback)
-  GET_SYMBOL(rmw_set_client_callback)
-  GET_SYMBOL(rmw_set_guard_condition_callback)
+  GET_SYMBOL(rmw_subscription_set_events_executor_callback)
+  GET_SYMBOL(rmw_service_set_events_executor_callback)
+  GET_SYMBOL(rmw_client_set_events_executor_callback)
+  GET_SYMBOL(rmw_guard_condition_set_events_executor_callback)
 }
 
 void * symbol_rmw_init = nullptr;
